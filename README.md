@@ -1,2 +1,2 @@
 # LAGG
-Learn AGGregator
+com.lagg.Learn AGGregator
