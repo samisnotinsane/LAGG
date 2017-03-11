@@ -5,6 +5,7 @@ import com.lagg.Topic;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.HashSet;
 
 /**
@@ -21,12 +22,20 @@ public class TopicGraph {
         try {
             BufferedReader in = new BufferedReader(new FileReader("Topics.in"));
             //load topics from a file
+            String line = in.readLine();
+            while(line != null) {
 
 
+                line = in.readLine();
+            }
+
+            in.close();
             in = new BufferedReader(new FileReader("Edges.in"));
 
+            in.close();
+
         }
-        catch(FileNotFoundException notfound) {
+        catch(IOException notfound) {
             notfound.printStackTrace();
         }
 
