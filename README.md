@@ -1,2 +1,2 @@
 # LAGG
-Learning AGGregator
+Learn AGGregator
