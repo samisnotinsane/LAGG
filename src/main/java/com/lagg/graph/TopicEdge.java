@@ -11,8 +11,6 @@ public class TopicEdge {
     private Topic dest;
     private int weight;
 
-
-
     public int getWeight() {
         return weight;
     }
@@ -23,5 +21,16 @@ public class TopicEdge {
 
     public Topic getDestination() {
         return dest;
+    }
+
+    TopicEdge(String source, String dest, int wt) throws BadInputException {
+        try {
+            this.source = TopicGraph.getTopicsUniverse().getTopic(source);
+            this.dest = TopicGraph.getTopicsUniverse().getTopic(dest);
+            this.weight = wt;
+        }
+        catch(NullPointerException nullpt) {
+            throw new BadInputException("Encoutered when building edge. No such node");
+        }
     }
 }

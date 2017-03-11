@@ -1,7 +1,7 @@
 package com.lagg;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by serem on 11/03/2017.
@@ -10,9 +10,12 @@ import java.util.List;
 public class Topic {
     private String subfield;
     private String name;
-    private List<Artefact> artefacts;
+    private HashSet<Artefact> artefacts;
 
-    public Topic(String base) {
+    public Topic(String name, String subfield, Set<Artefact> artefactSet) {
+        this.name = name;
+        this.subfield = subfield;
+        artefacts = new HashSet<Artefact>(artefactSet);
     }
 
     public String getSubfield() {
