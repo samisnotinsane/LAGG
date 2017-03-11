@@ -1,7 +1,8 @@
 package com.lagg.graph;
 
 import com.lagg.Topic;
-import java.util.List;
+
+import java.util.HashSet;
 
 
 /**
@@ -9,6 +10,8 @@ import java.util.List;
  * A subgraph of the topic graph
  */
 public class TopicSubgraph {
-    private List<TopicEdge> edges;
-    private List<Topic> topics;
+    private HashSet<TopicEdge> edges;
+    private HashSet<Topic> topics;
+
+
 }

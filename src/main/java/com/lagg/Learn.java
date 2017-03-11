@@ -5,4 +5,10 @@ package com.lagg;
  * A piece of learning material
  */
 public class Learn extends Artefact {
+    private String type;
+    private int rank;
+
+    public Learn(String base) {
+        super(base);
+    }
 }
