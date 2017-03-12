@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="455.0" prefWidth="554.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <content>
+      <Pane prefHeight="451.0" prefWidth="551.0" stylesheets="@styles.css">
+         <children>
+            <Label alignment="CENTER" layoutX="166.0" layoutY="34.0" prefHeight="55.0" prefWidth="219.0" text="How did you do?" textAlignment="CENTER">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="31.0" layoutY="213.0" prefHeight="80.0" prefWidth="90.0" text=" ">
+                <graphic>
+                    <ImageView fitHeight="80.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@sad-face.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </JFXButton>
+            <JFXButton layoutX="391.0" layoutY="213.0" prefHeight="80.0" prefWidth="90.0" text=" ">
+                <graphic>
+                    <ImageView fitHeight="80.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@happy-face.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </JFXButton>
+            <JFXButton layoutX="121.0" layoutY="213.0" prefHeight="80.0" prefWidth="90.0" text="-" />
+            <JFXButton layoutX="211.0" layoutY="213.0" prefHeight="80.0" prefWidth="90.0" text="-" />
+            <JFXButton layoutX="301.0" layoutY="213.0" prefHeight="80.0" prefWidth="90.0" text="-" />
+         </children>
+      </Pane>
+   </content>
+</ScrollPane>
