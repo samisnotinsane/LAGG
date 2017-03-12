@@ -101,4 +101,9 @@ public class Main extends Application {
         URL urlToTopPane = loadUrl(ABSOLUTE_PATH_TO_TOP_NAV_VIEW);
         return FXMLLoader.load(urlToTopPane);
     }
+
+    public static Pane loadGraphViewPane() throws Exception {
+        URL urlToGraphView = loadUrl(ABSOLUTE_PATH_TO_GRAPH_VIEW);
+        return FXMLLoader.load(urlToGraphView);
+    }
 }
