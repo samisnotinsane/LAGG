@@ -25,9 +25,6 @@ public class GraphViewController implements Initializable {
     @FXML
     WebView graphWebView;
 
-
-
-
     public void initialize(URL location, ResourceBundle resources) {
 
     }
