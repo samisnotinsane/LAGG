@@ -1,17 +1,18 @@
 package com.lagg.client.fxcontrollers;
 
+import com.jfoenix.controls.JFXButton;
+import com.lagg.client.Main;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableCell;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.Callback;
 
+import javax.swing.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -21,65 +22,35 @@ import java.util.ResourceBundle;
 public class ProgressScreenController implements Initializable {
 
     @FXML
-    TableColumn colLearningTools;
+    JFXButton btnLearningTools;
     @FXML
-    TableColumn colTests;
-
-    @FXML
-    TableView tableView;
-    private final ObservableList<Button> learningTools =
-            FXCollections.observableArrayList(
-                    new Button("Coursera/Lesson-3"),
-                    new Button("Medium/HTML Table for beginners"),
-                    new Button("Udemy/Tables"));
-
-    private final ObservableList<Button> tests =
-            FXCollections.observableArrayList(
-                    new Button("Test"),
-                    new Button("Test"),
-                    new Button("Test")
-                    );
+    TableColumn btnTests;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        colLearningTools.setCellValueFactory( new PropertyValueFactory<>( "learningTools" ) );
-        colTests.setCellValueFactory( new PropertyValueFactory<>( "tests" ) );
 
-        Callback<TableColumn<Button, Button>, TableCell<Button, Button>> cellFactory = //
-                new Callback<TableColumn<Button, Button>, TableCell<Button, Button>>()
-                {
-                    @Override
-                    public TableCell call(final TableColumn<Button, Button> param )
-                    {
-                        final TableCell<Button, Button> cell = new TableCell<Button, Button>()
-                        {
-
-                            final Button btn = new Button( "Just Do It" );
-
-                            @Override
-                            public void updateItem( Button item, boolean empty )
-                            {
-                                super.updateItem( item, empty );
-                                if ( empty )
-                                {
-                                    setGraphic( null );
-                                    setText( null );
-                                }
-                                else
-                                {
-                                    btn.setOnAction( ( ActionEvent event ) ->
-                                    {
-
-                                        System.out.println( "transition to did you like this content" );
-                                    } );
-                                    setGraphic( btn );
-                                    setText( null );
-                                }
-                            }
-                        };
-                        return cell;
-                    }
-                };
     }
 
+    public void handleLearningTools(ActionEvent e) {
+        // open did you like this content
+        // open likeView.fxml
+
+        try {
+            ScrollPane scrollPane = Main.loadLikeView();
+            Main.rootPane.setCenter(null);
+            Main.rootPane.setCenter(scrollPane);
+        } catch (Exception e1) {
+            e1.printStackTrace();
+        }
+    }
+
+    public void handleBtnTests(ActionEvent e) {
+        try {
+            ScrollPane scrollPane = Main.loadRankScreen();
+            Main.rootPane.setCenter(null);
+            Main.rootPane.setCenter(scrollPane);
+        } catch (Exception e2) {
+            e2.printStackTrace();
+        }
+    }
 }

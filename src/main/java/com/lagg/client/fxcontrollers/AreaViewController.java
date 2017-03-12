@@ -6,17 +6,21 @@ import com.lagg.client.Main;
 import com.lagg.graph.TopicGraph;
 import com.lagg.graph.TopicSubgraph;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.*;
 import org.pmw.tinylog.Logger;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.ResourceBundle;
 
 /**
@@ -74,9 +78,10 @@ public class AreaViewController implements Initializable {
         graphViewPane.setPrefWidth(170.0);
 
 
-        TopicSubgraph topicSubgraph = TopicGraph.getTopicsUniverse().getTopics("Linear algebra");
+        TopicSubgraph topicSubgraph = TopicGraph.getTopicsUniverse().getTopics("HTML");
         HashSet<Topic> topics = topicSubgraph.findEntryPoints(); // topics in graph
 
+        List<Button> graphButtons = new ArrayList<>();
         while (!(topics.isEmpty())) {
 
             HBox hbox = new HBox(30);
@@ -84,10 +89,11 @@ public class AreaViewController implements Initializable {
             hbox.setAlignment(Pos.CENTER);
 
             for (Topic topic : topics) {
-                hbox.getChildren().add(new Button(topic.getName()));
+                Button btn = new Button(topic.getName());
+                hbox.getChildren().add(btn);
+                graphButtons.add(btn);
             }
             graphViewPane.getChildren().add(hbox);
-
             HashSet<Topic> temps = new HashSet<>();
             for (Topic topic : topics) {
                 for(Topic temp : topicSubgraph.findChildren(topic))
@@ -95,6 +101,19 @@ public class AreaViewController implements Initializable {
                         temps.add(temp);
             }
             topics = new HashSet<>(temps);
+            for(Button btn : graphButtons) {
+                btn.setOnAction( e -> {
+                    // open table screen (progress screen)
+
+                    Main.rootPane.setCenter(null);
+                    try {
+                        ScrollPane progressScreen = Main.loadProgressScreenPane();
+                        Main.rootPane.setCenter(progressScreen);
+                    } catch (Exception ex) {
+                        Logger.error(ex);
+                    }
+                        });
+            }
         }
 
 

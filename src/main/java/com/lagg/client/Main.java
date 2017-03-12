@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -40,6 +41,15 @@ public class Main extends Application {
 
     public static final String ABSOLUTE_PATH_TO_GRAPH_VIEW =
             "src/main/resources/GraphView.fxml";
+
+    public static final String ABSOLUTE_PATH_TO_PROGRESS_SCREEN =
+            "src/main/resources/ProgressScreen.fxml";
+
+    public static final String ABSOLUTE_PATH_TO_LIKE_VIEW =
+            "src/main/resources/LikeView.fxml";
+
+    public static final String ABSOLUTE_PATH_TO_RANK_SCREEN =
+            "src/main/resources/TestRankScreen.fxml";
 
     public static BorderPane rootPane;
 
@@ -109,5 +119,20 @@ public class Main extends Application {
     public static Pane loadGraphViewPane() throws Exception {
         URL urlToGraphView = loadUrl(ABSOLUTE_PATH_TO_GRAPH_VIEW);
         return FXMLLoader.load(urlToGraphView);
+    }
+
+    public static ScrollPane loadProgressScreenPane() throws Exception {
+        URL urlToProgressScreen = loadUrl(ABSOLUTE_PATH_TO_PROGRESS_SCREEN);
+        return FXMLLoader.load(urlToProgressScreen);
+    }
+
+    public static ScrollPane loadLikeView() throws Exception {
+        URL urlToLikeView = loadUrl(ABSOLUTE_PATH_TO_LIKE_VIEW);
+        return FXMLLoader.load(urlToLikeView);
+    }
+
+    public static ScrollPane loadRankScreen() throws Exception {
+        URL urlToRankScreen = loadUrl(ABSOLUTE_PATH_TO_LIKE_VIEW);
+        return FXMLLoader.load(urlToRankScreen);
     }
 }
