@@ -30,7 +30,7 @@ public class LoginController implements Initializable {
     }
 
     @FXML
-    public void handleFbLogin(ActionEvent event) throws IOException {
+    public void handleFbLogin(ActionEvent event) {
         Logger.trace("handleFbLogin clicked");
         try {
             Pane topNavPane = Main.loadTopNavView();

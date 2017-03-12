@@ -45,10 +45,22 @@ public class AreaViewController implements Initializable {
         btnTopRight.setText("Web Development");
         btnCentreLeft.setText("Programming");
         btnCentreRight.setText("Computer Science");
+
         btnBottomLeft.setText("");
         btnBottomLeft.setVisible(false);
+    }
 
-
-
+    @FXML
+    public void handleBtnTopRight(ActionEvent event) {
+        Logger.trace("btnTopRight clicked");
+        // user clicked on 'web development'
+        // show graph screen.
+        try {
+            Pane graphViewPane = Main.loadGraphViewPane();
+            Main.rootPane.setCenter(null);
+            Main.rootPane.setCenter(graphViewPane);
+        } catch (Exception e) {
+            Logger.error("Failed to load area view {}", e);
+        }
     }
 }
