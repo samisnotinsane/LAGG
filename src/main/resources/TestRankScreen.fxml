@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -8,7 +14,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="455.0" prefWidth="554.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="455.0" prefWidth="554.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lagg.client.fxcontrollers.TestRankScreenController">
    <content>
       <Pane prefHeight="451.0" prefWidth="551.0" stylesheets="@styles.css">
          <children>
@@ -26,7 +32,7 @@
                     </ImageView>
                 </graphic>
             </JFXButton>
-            <JFXButton layoutX="391.0" layoutY="213.0" prefHeight="80.0" prefWidth="90.0" text=" ">
+            <JFXButton fx:id="btnHappy" layoutX="391.0" layoutY="213.0" onAction="#handleBtnHappy" prefHeight="80.0" prefWidth="90.0" text=" ">
                 <graphic>
                     <ImageView fitHeight="80.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
                         <image>

@@ -132,7 +132,7 @@ public class Main extends Application {
     }
 
     public static ScrollPane loadRankScreen() throws Exception {
-        URL urlToRankScreen = loadUrl(ABSOLUTE_PATH_TO_LIKE_VIEW);
+        URL urlToRankScreen = loadUrl(ABSOLUTE_PATH_TO_RANK_SCREEN);
         return FXMLLoader.load(urlToRankScreen);
     }
 }
