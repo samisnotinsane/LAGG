@@ -25,12 +25,28 @@ public class TopicEdge {
 
     TopicEdge(String source, String dest, int wt) throws BadInputException {
         try {
-            this.source = TopicGraph.getTopicsUniverse().getTopic(source);
-            this.dest = TopicGraph.getTopicsUniverse().getTopic(dest);
+            this.source = TopicGraph.getTopic(source);
+            this.dest = TopicGraph.getTopic(dest);
             this.weight = wt;
         }
         catch(NullPointerException nullpt) {
             throw new BadInputException("Encoutered when building edge. No such node");
         }
+    }
+
+    public TopicEdge getReverse() {
+        for(TopicEdge topicEdge : getDestination().getOutbound())
+            if(topicEdge.getDestination() == source)
+                return topicEdge;
+        return null;
+    }
+
+    @Override
+    public String toString() {
+        return "TopicEdge{" +
+                source.getName() +
+                ", " + dest.getName() +
+                ", " + weight +
+                '}';
     }
 }

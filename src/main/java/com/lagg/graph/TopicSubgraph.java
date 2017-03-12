@@ -4,6 +4,7 @@ import com.lagg.Topic;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 
 
 /**
@@ -25,5 +26,15 @@ public class TopicSubgraph {
     protected TopicSubgraph(HashMap<String, Topic> t, HashSet<TopicEdge> e) {
         topics = t;
         edges = e;
+    }
+
+    public void print() {
+        for(Map.Entry<String, Topic> topicEntry : topics.entrySet())
+            System.out.println(topicEntry.getValue().toString());
+
+        System.out.println("\n\n");
+
+        for(TopicEdge te : edges)
+            System.out.println(te.toString());
     }
 }

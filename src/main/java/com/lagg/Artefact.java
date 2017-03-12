@@ -37,24 +37,26 @@ public class Artefact {
 
     public Artefact(String base, String topics) throws BadInputException {
             String[] attributes = base.split(",");
-            for (String s : attributes)
-                s = s.trim();
+            for(int i = 0; i < attributes.length; i++)
+                attributes[i] = attributes[i].trim();
             name = attributes[0];
             link = attributes[1];
-            if(attributes[2] == "Learn")
+            if(attributes[2].equals("Learn"))
                 type = new Learn(attributes[3], attributes[4]);
-            else if (attributes[2] == "Test")
+            else if (attributes[2].equals("Test"))
                 type = new Test(attributes[3]);
             else throw new BadInputException("wrong artefact type");
 
+            this.topics = new HashSet<>();
+
             String[] topicNames = topics.split(",");
-            for(String s : topicNames) {
+            for(int i = 0; i < topicNames.length; i++) {
                 try {
-                    s = s.trim();
-                    this.topics.add(TopicGraph.getTopicsUniverse().getTopic(s));
+                    topicNames[i] = topicNames[i].trim();
+                    this.topics.add(TopicGraph.getTopic(topicNames[i]));
                 }
                 catch(NullPointerException nullpt) {
-                    throw new BadInputException("inexistent topic " + s);
+                    throw new BadInputException("inexistent topic " + topicNames[i]);
                 }
             }
     }

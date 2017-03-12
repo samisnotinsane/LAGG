@@ -13,15 +13,15 @@ import java.util.*;
 public class TopicGraph implements TopicsGraphInterface {
     private static TopicGraph universe; // the singleton
 
-    private HashMap<String, Topic> topics;
+    private static HashMap<String, Topic> topics;
     private HashSet<TopicEdge> edges;
     private HashMap<String, Artefact> artefacts;
 
     private TopicGraph() throws BadInputException {
         try {
-            loadTopics("Topics.in");
-            loadEdges("Edges.in");
-            loadArtefacts("Artefacts.in");
+            loadTopics("src/main/resources/Topics.in");
+            loadEdges("src/main/resources/Edges.in");
+            loadArtefacts("src/main/resources/Artefacts.in");
         }
         catch(IOException notfound) {
             notfound.printStackTrace();
@@ -42,7 +42,7 @@ public class TopicGraph implements TopicsGraphInterface {
         else return universe;
     }
 
-    public Topic getTopic(String name) {
+    public static Topic getTopic(String name) {
         return topics.get(name);
     }
 
@@ -55,8 +55,8 @@ public class TopicGraph implements TopicsGraphInterface {
 
         while(line != null) {
             String[] fields = line.split(",");
-            for(String s : fields)
-                s = s.trim();
+            for(int i = 0; i < fields.length; i++)
+                fields[i] = fields[i].trim();
             topics.put(fields[0], new Topic(fields[0], fields[1]));
             line = in.readLine();
         }
@@ -72,8 +72,8 @@ public class TopicGraph implements TopicsGraphInterface {
 
         while(line != null) {
             String[] fields = line.split(",");
-            for(String s : fields)
-                s = s.trim();
+            for(int i = 0; i < fields.length; i++)
+                fields[i] = fields[i].trim();
             addEdge(new TopicEdge(fields[0], fields[1], Integer.parseInt(fields[2])));
             line = in.readLine();
         }
@@ -88,8 +88,8 @@ public class TopicGraph implements TopicsGraphInterface {
         String line = in.readLine();
         while(line != null) {
             String[] fields = line.split(";");
-            for(String s : fields)
-                s = s.trim();
+            for(int i = 0; i < fields.length; i++)
+                fields[i] = fields[i].trim();
             addArtefact(new Artefact(fields[0], fields[1]));
             line = in.readLine();
         }

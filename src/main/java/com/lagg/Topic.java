@@ -19,20 +19,44 @@ public class Topic {
         this.name = name;
         this.subfield = subfield;
         artefacts = new HashSet<Artefact>(artefactSet);
+        outbound = new HashSet<>();
+        inbound = new HashSet<>();
     }
 
     public Topic(String name, String subfield) {
         this.name = name;
         this.subfield = subfield;
         artefacts = new HashSet<Artefact>();
+        outbound = new HashSet<>();
+        inbound = new HashSet<>();
+    }
+
+    public HashSet<Artefact> getArtefacts() {
+        return artefacts;
+    }
+
+    public HashSet<TopicEdge> getOutbound() {
+        return outbound;
+    }
+
+    public HashSet<TopicEdge> getInbound() {
+        return inbound;
     }
 
     public String getSubfield() {
         return subfield;
     }
 
-    private String getName() {
+    public String getName() {
         return name;
+    }
+
+    @Override
+    public String toString() {
+        return "Topic{" +
+                "name='" + name + '\'' +
+                ", subfield='" + subfield + '\'' +
+                '}';
     }
 
     public void addArtefact(Artefact a) {
