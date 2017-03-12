@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="1100.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <stylesheets>
+      <URL value="@styles.css" />
+   </stylesheets>
+   <children>
+      <JFXButton id="btnNavBack" layoutX="48.0" layoutY="10.0" prefHeight="31.0" prefWidth="30.0" ripplerFill="WHITE" text=" ">
+         <graphic>
+            <ImageView fitHeight="21.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@arrow-left.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton id="btnNavForward" contentDisplay="CENTER" layoutX="75.0" layoutY="10.0" prefHeight="30.0" prefWidth="30.0" ripplerFill="WHITE" text=" ">
+         <graphic>
+            <ImageView fitHeight="21.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@arrow-right.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <Label layoutX="972.0" layoutY="14.0" text="Amy Walkers">
+         <font>
+            <Font name="Avenir Next Regular" size="13.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="30.0" fitWidth="33.0" layoutX="1058.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@placeholder-user.png" />
+         </image>
+      </ImageView>
+      <JFXHamburger layoutX="8.0" layoutY="15.0" />
+      <ImageView fitHeight="50.0" fitWidth="57.0" layoutX="126.0" pickOnBounds="true">
+         <image>
+            <Image url="@logofbmedium.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>
