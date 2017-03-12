@@ -2,6 +2,7 @@ package com.lagg.graph;
 
 import com.lagg.Topic;
 
+import java.util.HashMap;
 import java.util.HashSet;
 
 
@@ -11,7 +12,18 @@ import java.util.HashSet;
  */
 public class TopicSubgraph {
     private HashSet<TopicEdge> edges;
-    private HashSet<Topic> topics;
+    private HashMap<String, Topic> topics;
 
+    public HashSet<TopicEdge> getEdges() {
+        return new HashSet<TopicEdge>(edges);
+    }
 
+    public HashMap<String, Topic> getTopics() {
+        return new HashMap<String, Topic>(topics);
+    }
+
+    protected TopicSubgraph(HashMap<String, Topic> t, HashSet<TopicEdge> e) {
+        topics = t;
+        edges = e;
+    }
 }
