@@ -2,7 +2,57 @@
     -fx-background-color: white;
 }
 
+#btnNavBack {
+    -fx-background-image: url("arrow-left.png");
+    -fx-background-size: 18 18;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position:center;
+}
+
+#btnNavForward {
+    -fx-background-image: url("arrow-right.png");
+    -fx-background-size: 18 18;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position:center;
+}
+
 #btnFbLogin {
     -fx-background-color: #3B5998;
+    -fx-text-fill: white;
+}
+
+#btnAreaScience {
+    -fx-background-color: #68f9e2;
+    -fx-text-fill: white;
+}
+
+#btnAreaTechnology {
+    -fx-background-color: #2eddf9;
+    -fx-text-fill: white;
+}
+
+#btnAreaArts {
+    -fx-background-color: #8a89f9;
+    -fx-text-fill: white;
+}
+
+#btnAreaHumanities {
+    -fx-background-color: #f9bfd0;
+    -fx-text-fill: white;
+}
+
+
+#btnAreaFinance {
+    -fx-background-color: #a9f94b;
+    -fx-text-fill: white;
+}
+
+#btnAreaEconomics {
+    -fx-background-color: #f9e741;
+    -fx-text-fill: white;
+}
+
+#btnAreaLifestyle {
+    -fx-background-color: #a1c8f9;
     -fx-text-fill: white;
 }

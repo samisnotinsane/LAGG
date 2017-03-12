@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="473.0" prefWidth="778.0" styleClass="background" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lagg.client.fxcontrollers.LoginController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="133.0" prefWidth="779.0" spacing="20.0">
+         <children>
+            <JFXButton id="btnAreaScience" alignment="CENTER" buttonType="RAISED" contentDisplay="TOP" prefHeight="120.0" prefWidth="170.0" text="Science">
+               <!--<graphic>-->
+                  <!--<ImageView fitHeight="176.0" fitWidth="166.0" pickOnBounds="true" preserveRatio="true">-->
+                     <!--<image>-->
+                        <!--<Image url="@chemistry-science.jpg" />-->
+                     <!--</image>-->
+                  <!--</ImageView>-->
+               <!--</graphic>-->
+            </JFXButton>
+
+            <JFXButton id="btnAreaTechnology" alignment="CENTER" buttonType="RAISED" contentDisplay="TOP" prefHeight="120.0" prefWidth="170.0" text="Technology">
+               <!--<graphic>-->
+                  <!--<ImageView fitHeight="176.0" fitWidth="166.0" pickOnBounds="true" preserveRatio="true">-->
+                     <!--<image>-->
+                        <!--<Image url="@chemistry-science.jpg" />-->
+                     <!--</image>-->
+                  <!--</ImageView>-->
+               <!--</graphic>-->
+            </JFXButton>
+            
+            <JFXButton id="btnAreaArts" alignment="CENTER" buttonType="RAISED" contentDisplay="TOP" prefHeight="120.0" prefWidth="170.0" text="Arts">
+                <!--<graphic>-->
+                    <!--<ImageView fitHeight="176.0" fitWidth="166.0" pickOnBounds="true" preserveRatio="true">-->
+                        <!--<image>-->
+                            <!--<Image url="@chemistry-science.jpg" />-->
+                        <!--</image>-->
+                    <!--</ImageView>-->
+                <!--</graphic>-->
+            </JFXButton>
+
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="-4.0" layoutY="163.0" prefHeight="133.0" prefWidth="778.0" spacing="20.0">
+         <children>
+            <JFXButton id="btnAreaHumanities" alignment="CENTER" buttonType="RAISED" contentDisplay="TOP" prefHeight="120.0" prefWidth="170.0" text="Humanities" >
+                <!--<graphic>-->
+                    <!--<ImageView fitHeight="176.0" fitWidth="166.0" pickOnBounds="true" preserveRatio="true">-->
+                        <!--<image>-->
+                            <!--<Image url="@chemistry-science.jpg" />-->
+                        <!--</image>-->
+                    <!--</ImageView>-->
+                <!--</graphic>-->
+            </JFXButton>
+
+            <JFXButton id="btnAreaFinance" alignment="CENTER" buttonType="RAISED" contentDisplay="TOP" prefHeight="120.0" prefWidth="170.0" text="Finance" >
+                <!--<graphic>-->
+                    <!--<ImageView fitHeight="176.0" fitWidth="166.0" pickOnBounds="true" preserveRatio="true">-->
+                        <!--<image>-->
+                            <!--<Image url="@chemistry-science.jpg" />-->
+                        <!--</image>-->
+                    <!--</ImageView>-->
+                <!--</graphic>-->
+            </JFXButton>
+
+             <JFXButton id="btnAreaEconomics" alignment="CENTER" buttonType="RAISED" contentDisplay="TOP" prefHeight="120.0" prefWidth="170.0" text="Economics">
+                 <!--<graphic>-->
+                     <!--<ImageView fitHeight="176.0" fitWidth="166.0" pickOnBounds="true" preserveRatio="true">-->
+                         <!--<image>-->
+                             <!--<Image url="@chemistry-science.jpg" />-->
+                         <!--</image>-->
+                     <!--</ImageView>-->
+                 <!--</graphic>-->
+             </JFXButton>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="3.0" layoutY="332.0" prefHeight="133.0" prefWidth="779.0" spacing="20.0">
+         <children>
+            <JFXButton id="btnAreaLifestyle" alignment="CENTER" buttonType="RAISED" prefHeight="120.0" prefWidth="170.0" text="Lifestyle" />
+            <JFXButton alignment="CENTER" disable="true" opacity="0.0" prefHeight="120.0" prefWidth="170.0" text="." />
+            <JFXButton alignment="CENTER" disable="true" opacity="0.0" prefHeight="120.0" prefWidth="170.0" text=".." />
+         </children>
+      </HBox>
+   </children>
+</Pane>
