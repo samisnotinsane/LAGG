@@ -1,50 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.web.*?>
+<?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="622.0" prefWidth="1025.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lagg.client.fxcontrollers.GraphViewController">
-   <top>
-      <HBox prefHeight="35.0" prefWidth="1025.0" BorderPane.alignment="CENTER">
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="455.0" prefWidth="554.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <content>
+      <Pane prefHeight="451.0" prefWidth="551.0" stylesheets="@styles.css">
          <children>
-            <HBox prefHeight="35.0" prefWidth="1111.0">
-               <children>
-                  <Button fx:id="btnBack" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="34.0" prefWidth="66.0" text="&lt;" />
-                  <Label text="Lagg" />
-               </children>
-            </HBox>
-            <HBox prefHeight="35.0" prefWidth="303.0">
-               <children>
-                  <Label fx:id="lblUsername" text="Username" />
-               </children>
-            </HBox>
+            <JFXButton id="nodeEntryGraph" layoutX="246.0" layoutY="46.0" stylesheets="@styles.css" />
          </children>
-      </HBox>
-   </top>
-   <center>
-      <WebView fx:id="graphWebView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
-   </center>
-   <bottom>
-      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <HBox prefHeight="100.0" prefWidth="272.0">
-               <children>
-                  <Label fx:id="lblArea" text="Area" />
-               </children>
-            </HBox>
-            <HBox prefHeight="100.0" prefWidth="254.0">
-               <children>
-                  <Label fx:id="lblField" text="Field" />
-               </children>
-            </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Label fx:id="lblSubfield" text="Subfield" />
-               </children>
-            </HBox>
-         </children>
-      </HBox>
-   </bottom>
-</BorderPane>
+      </Pane>
+   </content>
+</ScrollPane>

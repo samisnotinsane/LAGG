@@ -77,6 +77,10 @@ public class Main extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
 
+        // get graph
+
+
+
     }
 
     public static void configureLog() {

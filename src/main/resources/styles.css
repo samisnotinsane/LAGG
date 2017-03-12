@@ -56,3 +56,11 @@
     -fx-background-color: #a1c8f9;
     -fx-text-fill: white;
 }
+
+#nodeEntryGraph {
+    -fx-background-radius: 30m;
+    -fx-min-width: 30px;
+    -fx-min-height: 30px;
+    -fx-max-width: 30px;
+    -fx-max-height: 30px;
+}
