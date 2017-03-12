@@ -23,9 +23,41 @@ public class TopicSubgraph {
         return new HashMap<String, Topic>(topics);
     }
 
+    public HashSet<Topic> findEntryPoints() {
+        HashSet<Topic> entryPoints = new HashSet<>();
+        for(Map.Entry<String, Topic> topicEntry : topics.entrySet()) {
+            if(topicEntry.getValue().getActiveIn().isEmpty())
+                entryPoints.add(topicEntry.getValue());
+        }
+        return entryPoints;
+    }
+
+    public HashSet<Topic> findChildren(Topic topic) {
+        HashSet<Topic> result = new HashSet<>();
+        for(TopicEdge te : topic.getActiveOut()) {
+            if(topics.containsValue(te.getDestination()))
+                result.add(te.getDestination());
+        }
+        return result;
+    }
+
+    public HashSet<Topic> findPrerequisites(Topic topic) {
+        HashSet<Topic> result = new HashSet<>();
+        for(TopicEdge te : topic.getActiveIn()) {
+            if(topics.containsValue(te.getSource()))
+                result.add(te.getSource());
+        }
+        return result;
+    }
+
     protected TopicSubgraph(HashMap<String, Topic> t, HashSet<TopicEdge> e) {
         topics = t;
         edges = e;
+
+        for(TopicEdge te : e) {
+            te.getSource().activateOut(te);
+            te.getDestination().activateIn(te);
+        }
     }
 
     public void print() {

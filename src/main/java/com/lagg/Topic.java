@@ -14,6 +14,7 @@ public class Topic {
     private String name;
     private HashSet<Artefact> artefacts;
     private HashSet<TopicEdge> outbound, inbound;
+    private HashSet<TopicEdge> activeOut, activeIn;
 
     public Topic(String name, String subfield, Set<Artefact> artefactSet) {
         this.name = name;
@@ -21,6 +22,8 @@ public class Topic {
         artefacts = new HashSet<Artefact>(artefactSet);
         outbound = new HashSet<>();
         inbound = new HashSet<>();
+        activeIn = new HashSet<>();
+        activeOut = new HashSet<>();
     }
 
     public Topic(String name, String subfield) {
@@ -29,6 +32,8 @@ public class Topic {
         artefacts = new HashSet<Artefact>();
         outbound = new HashSet<>();
         inbound = new HashSet<>();
+        activeIn = new HashSet<>();
+        activeOut = new HashSet<>();
     }
 
     public HashSet<Artefact> getArtefacts() {
@@ -41,6 +46,14 @@ public class Topic {
 
     public HashSet<TopicEdge> getInbound() {
         return inbound;
+    }
+
+    public HashSet<TopicEdge> getActiveIn() {
+        return activeIn;
+    }
+
+    public HashSet<TopicEdge> getActiveOut() {
+        return activeOut;
     }
 
     public String getSubfield() {
@@ -69,6 +82,26 @@ public class Topic {
 
     public void addOutboundEdge(TopicEdge e) {
         outbound.add(e);
+    }
+
+    public void activateIn(TopicEdge e) {
+        if(inbound.contains(e))
+            activeIn.add(e);
+    }
+
+    public void activateOut(TopicEdge e) {
+        if(outbound.contains(e))
+            activeOut.add(e);
+    }
+
+    public void deactivateIn(TopicEdge e) {
+        if(activeIn.contains(e))
+            activeIn.remove(e);
+    }
+
+    public void deactivateOut(TopicEdge e) {
+        if(activeOut.contains(e))
+            activeOut.remove(e);
     }
 
 }

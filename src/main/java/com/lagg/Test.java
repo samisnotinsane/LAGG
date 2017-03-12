@@ -10,4 +10,8 @@ public class Test extends ArtefactType {
     Test(String diff) {
         difficulty = Integer.parseInt(diff.trim());
     }
+
+    public int getDifficulty() {
+        return difficulty;
+    }
 }

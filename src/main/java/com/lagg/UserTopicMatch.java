@@ -5,4 +5,6 @@ package com.lagg;
  * Relation between a com.lagg.User and a com.lagg.Topic, i.e. confidence, articles read, test taken, etc.
  */
 public class UserTopicMatch {
+    private User user;
+    private Topic topic;
 }
